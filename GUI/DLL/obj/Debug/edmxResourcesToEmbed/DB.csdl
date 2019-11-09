@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FinalProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="activity">
+    <Key>
+      <PropertyRef Name="activityId" />
+    </Key>
+    <Property Name="activityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeNumber" Type="Int32" Nullable="false" />
+    <Property Name="activityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="activityStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="employee" Relationship="Self.FK_activities" FromRole="activities" ToRole="employees" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="employeeNumber" />
+    </Key>
+    <Property Name="employeeNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeId" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="numUploadedProfiles" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="activities" Relationship="Self.FK_activities" FromRole="employees" ToRole="activities" />
+    <NavigationProperty Name="uploadedProfiles" Relationship="Self.FK_uploadedProfiles" FromRole="employees" ToRole="uploadedProfiles" />
+  </EntityType>
+  <EntityType Name="uploadedProfile">
+    <Key>
+      <PropertyRef Name="uploadedProfileNumber" />
+    </Key>
+    <Property Name="uploadedProfileNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="employeeNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="employee" Relationship="Self.FK_uploadedProfiles" FromRole="uploadedProfiles" ToRole="employees" />
+  </EntityType>
+  <Association Name="FK_activities">
+    <End Role="employees" Type="Self.employee" Multiplicity="1" />
+    <End Role="activities" Type="Self.activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employeeNumber" />
+      </Principal>
+      <Dependent Role="activities">
+        <PropertyRef Name="employeeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uploadedProfiles">
+    <End Role="employees" Type="Self.employee" Multiplicity="1" />
+    <End Role="uploadedProfiles" Type="Self.uploadedProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employeeNumber" />
+      </Principal>
+      <Dependent Role="uploadedProfiles">
+        <PropertyRef Name="employeeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FinalProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="activities" EntityType="Self.activity" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="uploadedProfiles" EntityType="Self.uploadedProfile" />
+    <AssociationSet Name="FK_activities" Association="Self.FK_activities">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="activities" EntitySet="activities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uploadedProfiles" Association="Self.FK_uploadedProfiles">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="uploadedProfiles" EntitySet="uploadedProfiles" />
+    </AssociationSet>
+    <FunctionImport Name="sampleProcedure" ReturnType="Collection(FinalProjectModel.sampleProcedure_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sampleProcedure_Result">
+    <Property Type="Int32" Name="employeeNumber" Nullable="false" />
+    <Property Type="String" Name="employeeId" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="firstName" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="lastName" Nullable="false" MaxLength="25" />
+    <Property Type="DateTime" Name="dateAdded" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="numUploadedProfiles" Nullable="false" />
+  </ComplexType>
+</Schema>

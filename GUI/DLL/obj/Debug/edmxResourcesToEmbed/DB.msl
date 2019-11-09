@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FinalProjectModelStoreContainer" CdmEntityContainer="FinalProjectEntities">
+    <EntitySetMapping Name="activities">
+      <EntityTypeMapping TypeName="FinalProjectModel.activity">
+        <MappingFragment StoreEntitySet="activities">
+          <ScalarProperty Name="activityId" ColumnName="activityId" />
+          <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+          <ScalarProperty Name="activityDate" ColumnName="activityDate" />
+          <ScalarProperty Name="activityStatus" ColumnName="activityStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="FinalProjectModel.employee">
+        <MappingFragment StoreEntitySet="employees">
+          <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+          <ScalarProperty Name="numUploadedProfiles" ColumnName="numUploadedProfiles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uploadedProfiles">
+      <EntityTypeMapping TypeName="FinalProjectModel.uploadedProfile">
+        <MappingFragment StoreEntitySet="uploadedProfiles">
+          <ScalarProperty Name="uploadedProfileNumber" ColumnName="uploadedProfileNumber" />
+          <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sampleProcedure" FunctionName="FinalProjectModel.Store.sampleProcedure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FinalProjectModel.sampleProcedure_Result">
+          <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+          <ScalarProperty Name="numUploadedProfiles" ColumnName="numUploadedProfiles" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

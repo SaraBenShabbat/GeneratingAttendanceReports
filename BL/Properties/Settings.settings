@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="connectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data source=.;initial catalog=FinalProject;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&amp;quot;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

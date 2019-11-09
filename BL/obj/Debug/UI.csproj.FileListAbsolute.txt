@@ -1,0 +1,12 @@
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\bin\Debug\UI.exe.config
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\bin\Debug\UI.exe
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\bin\Debug\UI.pdb
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.exe
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.pdb
+C:\Users\User\Documents\softwareEngineering_2ndYear\sarabenshabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.csproj.ResolveComReference.cache
+C:\Users\User\Documents\softwareEngineering_2ndYear\SaraBenShabbatProject\SaraBenShabbatProject\UI\obj\Debug\UI.MenuFrm.resources
+C:\Users\User\Documents\softwareEngineering_2ndYear\SaraBenShabbatProject\SaraBenShabbatProject\UI\obj\Debug\Interop.WMLSS.dll
+C:\Users\User\Documents\softwareEngineering_2ndYear\SaraBenShabbatProject\SaraBenShabbatProject\UI\bin\Debug\Windows.winmd

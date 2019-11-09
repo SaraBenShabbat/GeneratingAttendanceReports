@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinalProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="activities">
+          <Key>
+            <PropertyRef Name="activityId" />
+          </Key>
+          <Property Name="activityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employeeNumber" Type="int" Nullable="false" />
+          <Property Name="activityDate" Type="datetime" Nullable="false" />
+          <Property Name="activityStatus" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="employeeNumber" />
+          </Key>
+          <Property Name="employeeNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employeeId" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="dateAdded" Type="datetime" Nullable="false" />
+          <Property Name="numUploadedProfiles" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uploadedProfiles">
+          <Key>
+            <PropertyRef Name="uploadedProfileNumber" />
+          </Key>
+          <Property Name="uploadedProfileNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="employeeNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_activities">
+          <End Role="employees" Type="Self.employees" Multiplicity="1" />
+          <End Role="activities" Type="Self.activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employees">
+              <PropertyRef Name="employeeNumber" />
+            </Principal>
+            <Dependent Role="activities">
+              <PropertyRef Name="employeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_uploadedProfiles">
+          <End Role="employees" Type="Self.employees" Multiplicity="1" />
+          <End Role="uploadedProfiles" Type="Self.uploadedProfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employees">
+              <PropertyRef Name="employeeNumber" />
+            </Principal>
+            <Dependent Role="uploadedProfiles">
+              <PropertyRef Name="employeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sampleProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="FinalProjectModelStoreContainer">
+          <EntitySet Name="activities" EntityType="Self.activities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uploadedProfiles" EntityType="Self.uploadedProfiles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_activities" Association="Self.FK_activities">
+            <End Role="employees" EntitySet="employees" />
+            <End Role="activities" EntitySet="activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_uploadedProfiles" Association="Self.FK_uploadedProfiles">
+            <End Role="employees" EntitySet="employees" />
+            <End Role="uploadedProfiles" EntitySet="uploadedProfiles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinalProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="activity">
+          <Key>
+            <PropertyRef Name="activityId" />
+          </Key>
+          <Property Name="activityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeNumber" Type="Int32" Nullable="false" />
+          <Property Name="activityDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="activityStatus" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_activities" FromRole="activities" ToRole="employees" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="employeeNumber" />
+          </Key>
+          <Property Name="employeeNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employeeId" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="numUploadedProfiles" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="activities" Relationship="Self.FK_activities" FromRole="employees" ToRole="activities" />
+          <NavigationProperty Name="uploadedProfiles" Relationship="Self.FK_uploadedProfiles" FromRole="employees" ToRole="uploadedProfiles" />
+        </EntityType>
+        <EntityType Name="uploadedProfile">
+          <Key>
+            <PropertyRef Name="uploadedProfileNumber" />
+          </Key>
+          <Property Name="uploadedProfileNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="employeeNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_uploadedProfiles" FromRole="uploadedProfiles" ToRole="employees" />
+        </EntityType>
+        <Association Name="FK_activities">
+          <End Role="employees" Type="Self.employee" Multiplicity="1" />
+          <End Role="activities" Type="Self.activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employees">
+              <PropertyRef Name="employeeNumber" />
+            </Principal>
+            <Dependent Role="activities">
+              <PropertyRef Name="employeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_uploadedProfiles">
+          <End Role="employees" Type="Self.employee" Multiplicity="1" />
+          <End Role="uploadedProfiles" Type="Self.uploadedProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employees">
+              <PropertyRef Name="employeeNumber" />
+            </Principal>
+            <Dependent Role="uploadedProfiles">
+              <PropertyRef Name="employeeNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinalProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activities" EntityType="Self.activity" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="uploadedProfiles" EntityType="Self.uploadedProfile" />
+          <AssociationSet Name="FK_activities" Association="Self.FK_activities">
+            <End Role="employees" EntitySet="employees" />
+            <End Role="activities" EntitySet="activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_uploadedProfiles" Association="Self.FK_uploadedProfiles">
+            <End Role="employees" EntitySet="employees" />
+            <End Role="uploadedProfiles" EntitySet="uploadedProfiles" />
+          </AssociationSet>
+          <FunctionImport Name="sampleProcedure" ReturnType="Collection(FinalProjectModel.sampleProcedure_Result)" />
+        </EntityContainer>
+        <ComplexType Name="sampleProcedure_Result">
+          <Property Type="Int32" Name="employeeNumber" Nullable="false" />
+          <Property Type="String" Name="employeeId" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="firstName" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="lastName" Nullable="false" MaxLength="25" />
+          <Property Type="DateTime" Name="dateAdded" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="numUploadedProfiles" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinalProjectModelStoreContainer" CdmEntityContainer="FinalProjectEntities">
+          <EntitySetMapping Name="activities">
+            <EntityTypeMapping TypeName="FinalProjectModel.activity">
+              <MappingFragment StoreEntitySet="activities">
+                <ScalarProperty Name="activityId" ColumnName="activityId" />
+                <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+                <ScalarProperty Name="activityDate" ColumnName="activityDate" />
+                <ScalarProperty Name="activityStatus" ColumnName="activityStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="FinalProjectModel.employee">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="numUploadedProfiles" ColumnName="numUploadedProfiles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uploadedProfiles">
+            <EntityTypeMapping TypeName="FinalProjectModel.uploadedProfile">
+              <MappingFragment StoreEntitySet="uploadedProfiles">
+                <ScalarProperty Name="uploadedProfileNumber" ColumnName="uploadedProfileNumber" />
+                <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sampleProcedure" FunctionName="FinalProjectModel.Store.sampleProcedure">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FinalProjectModel.sampleProcedure_Result">
+                <ScalarProperty Name="employeeNumber" ColumnName="employeeNumber" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="numUploadedProfiles" ColumnName="numUploadedProfiles" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
