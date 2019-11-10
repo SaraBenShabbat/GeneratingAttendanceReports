@@ -33,6 +33,7 @@
             this.idTxtBox = new System.Windows.Forms.TextBox();
             this.monthNumeric = new System.Windows.Forms.NumericUpDown();
             this.yearNumeric = new System.Windows.Forms.NumericUpDown();
+            this.resultLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.monthNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearNumeric)).BeginInit();
             this.SuspendLayout();
@@ -108,11 +109,19 @@
             0,
             0});
             // 
+            // resultLbl
+            // 
+            this.resultLbl.Location = new System.Drawing.Point(28, 172);
+            this.resultLbl.Name = "resultLbl";
+            this.resultLbl.Size = new System.Drawing.Size(495, 23);
+            this.resultLbl.TabIndex = 7;
+            // 
             // ExportingFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 210);
+            this.Controls.Add(this.resultLbl);
             this.Controls.Add(this.yearNumeric);
             this.Controls.Add(this.monthNumeric);
             this.Controls.Add(this.idTxtBox);
@@ -135,5 +144,6 @@
         public System.Windows.Forms.TextBox idTxtBox;
         public System.Windows.Forms.NumericUpDown monthNumeric;
         public System.Windows.Forms.NumericUpDown yearNumeric;
+        public System.Windows.Forms.Label resultLbl;
     }
 }

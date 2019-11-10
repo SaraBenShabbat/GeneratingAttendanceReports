@@ -15,20 +15,22 @@ namespace BL
 
         #region Variable Declarations
 
+        private string remark = "";
         private SqlCommand sqlCmd;
 
         #endregion
 
         #region Methods
 
-        public void ExportActivities(string idNumber, NumericUpDown month, NumericUpDown year, Button results)
+        public void ExportActivities(string idNumber, NumericUpDown month, NumericUpDown year, Label resultLbl)
         {
-            DataTable dataTable = GetDataFromDB(idNumber, month, year, results);
-            ExportData(dataTable, results);
+            DataTable dataTable = GetDataFromDB(idNumber, month, year, resultLbl);
+            ExportData(dataTable, resultLbl);
         }
 
-        private DataTable GetDataFromDB(string idNumber, NumericUpDown month, NumericUpDown year, Button results)
+        private DataTable GetDataFromDB(string idNumber, NumericUpDown month, NumericUpDown year, Label resultLbl)
         {
+            remark = "";
             bool isCondition = false;
             DataTable dataTable = new DataTable();
 
@@ -36,9 +38,12 @@ namespace BL
 
             if (idNumber != "")
                 command = AddFilterOfIdNumber(command, idNumber, out isCondition);
-            if (isCondition == false)
+            // If the idNumber has typed hasn't found in the system.
+            if (idNumber != "" && isCondition == false)
+            {
+                remark = "There's no such an IdNumber in the system. | ";
                 return dataTable;
-
+            }
             if (month.Controls[1].Text != "")
             {
                 command += isCondition == true ? " and" : " where";
@@ -109,7 +114,7 @@ namespace BL
             return command;
         }
 
-        private void ExportData(DataTable dataTable, Button results)
+        private void ExportData(DataTable dataTable, Label resultLbl)
         {
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
@@ -129,7 +134,7 @@ namespace BL
 
             workbook.Save(@"..\..\..\..\Attendance Report.xlsx");
 
-            results.Text = "R=" + dataTable.Rows.Count.ToString() + "__C=" + dataTable.Columns.Count.ToString();
+            resultLbl.Text = remark + "R=" + dataTable.Rows.Count.ToString() + "__C=" + dataTable.Columns.Count.ToString();
         }
 
     }
