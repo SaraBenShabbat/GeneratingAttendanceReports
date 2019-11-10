@@ -4,6 +4,8 @@
 --CREATE DATABASE FinalProject
 --;
 
+----------------------------------- Does it works ??? -----------------------------------
+
 USE FinalProject
 ;
 ----   Craete table called 'employees'
