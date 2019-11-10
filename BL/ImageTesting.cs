@@ -121,7 +121,7 @@ namespace BL
                 //    croppedFaceImg = bmpImage.Clone(cropArea, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 //    croppedFaceImg.Save(@"..\..\..\..\" + imageName.Substring(0, imageName.Length - 4) + "_" + (index++) + ".jpg");
                 //
-                //    bmpImage.Dispose();
+                //    bmpImage.Dispose() - 1111111111111111111111111111111111111111111111111111111111111111111;
                 //}
 
                 // Go over all the detected faces: Try to find similar from the company employees & if ther's need, wrtie to DB.
