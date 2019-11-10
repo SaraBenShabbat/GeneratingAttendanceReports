@@ -122,15 +122,15 @@ namespace BL
                 //    croppedFaceImg.Save(@"..\..\..\..\" + imageName.Substring(0, imageName.Length - 4) + "_" + (index++) + ".jpg");
                 //
                 //    bmpImage.Dispose();
-                //}
 
-                // Go over all the detected faces: Try to find similar from the company employees & if ther's need, wrtie to DB.
+                // Go over all the detected faces: Try to find the similar from the company employees & if ther's need, wrtie to DB.
                 foreach (var face in faces)
                     FindSimilar(face.FaceId.ToString(), results);
             //}
             else
-                results.Text += "No faces for testing, have been detected";
+                results.Text += "No faces for testing, have been detected in the image";
 
+            ///////////////////// 1. }   2. in the image  3. the
 
             // Dispose the server client
             faceClient.HttpClient.Dispose();
