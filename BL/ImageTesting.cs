@@ -104,6 +104,7 @@ namespace BL
             // If, at least - one face detected in the img.
             if (faces.Count != 0)
 
+                // Don't forget - Erase this code. (- It's for cropping the faces have deytected in the img & create new ones.)
                 //{
                 // Go over all the detected coordinates, and create new image(s) according to these.
                 //Image croppedFaceImg;
@@ -121,7 +122,7 @@ namespace BL
                 //    croppedFaceImg = bmpImage.Clone(cropArea, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                 //    croppedFaceImg.Save(@"..\..\..\..\" + imageName.Substring(0, imageName.Length - 4) + "_" + (index++) + ".jpg");
                 //
-                //    bmpImage.Dispose();
+                //    bmpImage.Dispose();   
                 //}
 
                 // Go over all the detected faces: Try to find similar from the company employees & if ther's need, wrtie to DB.
