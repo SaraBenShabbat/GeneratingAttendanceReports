@@ -7,7 +7,6 @@ using System.Data.SqlClient;
 using GemBox.Spreadsheet;
 using System.Linq;
 using DLL;
-using Microsoft.Office.Tools.Excel;
 
 namespace BL
 {
