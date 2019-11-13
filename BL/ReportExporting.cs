@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using GemBox.Spreadsheet;
 using System.Linq;
 using DLL;
+using Microsoft.Office.Tools.Excel;
 
 namespace BL
 {
@@ -34,7 +35,7 @@ namespace BL
             bool isCondition = false;
             DataTable dataTable = new DataTable();
 
-            string command = "select * from activities";
+            string command = "SELECT employeeId, firstName + ' ' + lastName AS 'Full Name', activityDate AS 'Activity Date', CASE WHEN activityStatus = 1 THEN 'Enterance' ELSE 'Existance' END AS 'Activity Status' FROM activities a JOIN employees e ON a.employeeNumber = e.employeeNumber";
 
             if (idNumber != "")
                 command = AddFilterOfIdNumber(command, idNumber, out isCondition);
@@ -97,7 +98,7 @@ namespace BL
                 }
             }
 
-            command += " where employeeNumber = " + employeeNumber;
+            command += " where a.employeeNumber = " + employeeNumber;
             isCondition = true;
             return command;
         }
@@ -123,6 +124,7 @@ namespace BL
 
             string companyName = File.ReadAllText(@"..\..\..\..\companyName.txt", Encoding.UTF8);
             worksheet.Cells[0, 0].Value = "The attendance Report in " + companyName + "(- according to your filter selection):";
+
 
             // Insert DataTable to an Excel worksheet.
             worksheet.InsertDataTable(dataTable,

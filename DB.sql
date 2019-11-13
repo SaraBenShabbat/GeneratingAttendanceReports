@@ -90,5 +90,12 @@ SET numUploadedProfiles = 0
 SELECT * FROM uploadedProfiles
 ;
 
-SELECT * FROM activities 
+SELECT employeeId, firstName +' '+lastName AS 'Full Name', activityDate AS 'Activity Date', CASE WHEN
+ activityStatus = 1 THEN 'Enterance' 
+ELSE 'Existance' END AS 'activity Status'
+   FROM activities a JOIN employees e ON a.employeeNumber = e.employeeNumber
+
+
+
+
 where MONTH(activityDate) = 11;
