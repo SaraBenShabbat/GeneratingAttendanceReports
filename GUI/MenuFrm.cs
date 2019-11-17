@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 using BL;
+using System.Threading.Tasks;
 
 namespace GUI
 {
@@ -117,7 +118,7 @@ namespace GUI
 
         private void ImageTestingBtn_Click(object sender, EventArgs e)
         {
-            imageTesting.CropFacesAsync(takingPicBtn, fileExplorerBtn, ImageTestingBtn, label1);
+            imageTesting.CropFacesAsync(label1, takingPicBtn, fileExplorerBtn, ImageTestingBtn);
         }
 
         #endregion
@@ -170,6 +171,12 @@ namespace GUI
             (sender as Button).Enabled = false;
             expoertingFrm = new ExportingFrm(sender as Button);
             expoertingFrm.Show();
+        }
+
+        private async void button1_Click_1Async(object sender, EventArgs e)
+        {
+            ProcessScheduler processScheduler = new ProcessScheduler(label1);
+            await processScheduler.MainAsync();
         }
     }
 }

@@ -15,6 +15,7 @@ using System.Net.Http.Headers;
 using Microsoft.Azure.CognitiveServices.Vision.Face;
 using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
 using DLL;
+using System.Threading;
 
 namespace BL
 {
@@ -71,14 +72,17 @@ namespace BL
 
         #region Crop Faces From the picture has taken by the user & Get the current time from the server.
 
-        public async Task CropFacesAsync(Button takingPicBtn, Button fileExplorerBtn, Button ImageTestingBtn, Label results)
+        public async Task CropFacesAsync(Label results, Button takingPicBtn = null, Button fileExplorerBtn = null, Button ImageTestingBtn = null)
         {
-            results.Text = "";
+            results.Text += "\n";
 
-            // Some opearations can't be done at the same time; as the system doesn't support asynchronous.
-            takingPicBtn.Enabled = false;
-            fileExplorerBtn.Enabled = false;
-            ImageTestingBtn.Enabled = false;
+            if (takingPicBtn != null)
+            {
+                // Some opearations can't be done at the same time; as the system doesn't support asynchronous.
+                takingPicBtn.Enabled = false;
+                fileExplorerBtn.Enabled = false;
+                ImageTestingBtn.Enabled = false;
+            }
 
             // Get DateTime from the server.
             currentDateTime = GetDateTimeFromServer();
@@ -127,10 +131,13 @@ namespace BL
 
                 // Go over all the detected faces: Try to find similar from the company employees & if ther's need, wrtie to DB.
                 foreach (var face in faces)
-                    FindSimilar(face.FaceId.ToString(), results);
+                    await FindSimilar(face.FaceId.ToString(), results);
             //}
             else
+            {
                 results.Text += "No faces for testing, have been detected";
+                Console.WriteLine("---------------------------------------------------------------------------------");
+            }
 
             // Dispose the server client
             faceClient.HttpClient.Dispose();
@@ -142,9 +149,12 @@ namespace BL
             // Delete all the image(s) used in this method, from local PC.
             DeleteImages();
 
-            // The user can do whatever he wants.
-            takingPicBtn.Enabled = true;
-            fileExplorerBtn.Enabled = true;
+            if (takingPicBtn != null)
+            {
+                // The user can do whatever he wants.
+                takingPicBtn.Enabled = true;
+                fileExplorerBtn.Enabled = true;
+            }
         }
 
         private DateTime GetDateTimeFromServer()
@@ -160,7 +170,7 @@ namespace BL
 
         #region Find Similiar face from the face list of the current company
 
-        private async void FindSimilar(string faceId, Label res)
+        private async Task FindSimilar(string faceId, Label res)
         {
             var client = new HttpClient();
 
@@ -208,6 +218,7 @@ namespace BL
             }
 
             res.Text += "\n----------------\n";
+
         }
 
         private void FormatResponse(string responseBodyAsText, out string currentPersistedFaceId, out double currentConfidence)

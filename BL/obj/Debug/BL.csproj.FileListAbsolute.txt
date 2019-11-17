@@ -352,3 +352,11 @@ C:\Users\User\Desktop\FinalProject + Git\projects\BL\obj\Debug\BL.Properties.Res
 C:\Users\User\Desktop\FinalProject + Git\projects\BL\obj\Debug\BL.csproj.GenerateResource.Cache
 C:\Users\User\Desktop\FinalProject + Git\projects\BL\obj\Debug\BL.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\BL\obj\Debug\BL.pdb
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Imaging.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Math.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Video.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Imaging.xml
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Math.xml
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Video.xml
+C:\Users\User\Desktop\FinalProject + Git\projects\BL\bin\Debug\AForge.Video.DirectShow.xml
