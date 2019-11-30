@@ -107,7 +107,7 @@ namespace BL
 
             // If, at least - one face detected in the img.
             if (faces.Count != 0)
-
+            {
                 // Don't forget - Erase this code. (- It's for cropping the faces have deytected in the img & create new ones.)
                 //{
                 // Go over all the detected coordinates, and create new image(s) according to these.
@@ -132,12 +132,12 @@ namespace BL
                 // Go over all the detected faces: Try to find similar from the company employees & if ther's need, wrtie to DB.
                 foreach (var face in faces)
                     await FindSimilar(face.FaceId.ToString(), results);
+                results.Text += "New group";
+            }
+
             //}
             else
-            {
-                results.Text += "No faces for testing, have been detected";
-                Console.WriteLine("---------------------------------------------------------------------------------");
-            }
+                results.Text += "No faces for testing, have been detected\n----------------\n";
 
             // Dispose the server client
             faceClient.HttpClient.Dispose();

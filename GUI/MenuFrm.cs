@@ -25,7 +25,7 @@ namespace GUI
         public MenuFrm()
         {
             InitializeComponent();
-            label1.Location = new Point(0, 240);
+            label1.Location = new Point(0, 150);
         }
 
         #endregion
@@ -176,7 +176,7 @@ namespace GUI
         private async void button1_Click_1Async(object sender, EventArgs e)
         {
             ProcessScheduler processScheduler = new ProcessScheduler(label1);
-            await processScheduler.MainAsync();
+            processScheduler.MainAsync();
         }
     }
 }
