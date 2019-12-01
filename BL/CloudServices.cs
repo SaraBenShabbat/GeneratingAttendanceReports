@@ -4,11 +4,11 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
-using OpenCvSharp;
-using OpenCvSharp.Extensions;
 using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using OpenCvSharp;
+using OpenCvSharp.Extensions;
 
 namespace BL
 {
@@ -95,11 +95,16 @@ namespace BL
         {
             snapshot.Save(string.Format(@"..\..\..\..\{0}.jpg",
  ProfileUploading.currentEmployee.employeeId + ProfileUploading.currentEmployee.numUploadedProfiles), ImageFormat.Jpeg);
+
+            File.SetAttributes(string.Format(@"..\..\..\..\{0}.jpg",
+ ProfileUploading.currentEmployee.employeeId + ProfileUploading.currentEmployee.numUploadedProfiles), FileAttributes.Hidden);
         }
 
         private void SaveTestingImage()
         {
             snapshot.Save(string.Format(@"..\..\..\..\" + imageName), ImageFormat.Jpeg);
+
+            File.SetAttributes(string.Format(@"..\..\..\..\" + imageName), FileAttributes.Hidden);
         }
 
         #endregion

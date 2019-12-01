@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 using BL;
-using System.Threading.Tasks;
 
 namespace GUI
 {
@@ -101,7 +100,7 @@ namespace GUI
         private void FileExplorerBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Title = "Choose an image to test it";
+            fileDialog.Title = "Choose the image to test it";
             fileDialog.Filter = "Image Files|*.jpg";
             fileDialog.InitialDirectory = @"C:\Pictures";
             fileDialog.Multiselect = false;

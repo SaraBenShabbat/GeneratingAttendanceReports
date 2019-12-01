@@ -11,6 +11,7 @@ namespace GUI
 
         private Button openExportBtn = null;
         private ReportExporting reportExporting;
+        private string selectedFolder = null;
 
         #endregion
 
@@ -34,12 +35,16 @@ namespace GUI
 
         private void navigateBtn_Click(object sender, EventArgs e)
         {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = "Select the folder to which the reports will be exported.";
 
+            if (fbd.ShowDialog() == DialogResult.OK)
+                selectedFolder = fbd.SelectedPath;
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            this.reportExporting.ExportActivities(idTxtBox.Text.ToString(), monthNumeric, yearNumeric, resultLbl);
+            this.reportExporting.ExportActivities(idTxtBox.Text.ToString(), monthNumeric, yearNumeric, resultLbl,selectedFolder);
         }
 
         private void ExportingFrm_FormClosed(object sender, FormClosedEventArgs e)

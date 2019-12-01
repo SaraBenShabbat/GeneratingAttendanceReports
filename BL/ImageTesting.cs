@@ -6,16 +6,15 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Globalization;
-using Windows.Data.Json;
 using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Windows.Data.Json;
 using Microsoft.Azure.CognitiveServices.Vision.Face;
 using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
 using DLL;
-using System.Threading;
 
 namespace BL
 {
@@ -57,7 +56,7 @@ namespace BL
             takingPicBtn = takingPic;
             takingPicBtn.Enabled = false;
 
-            // The function opens the form with the webcam and the user is abled to take a profile.
+            // The function opens the form with the webcam and the user is abled to take a picture for testing.
             CaptureImageFromWebcam(capturingImageFrm, picture, results);
         }
 
@@ -65,7 +64,12 @@ namespace BL
         {
             // In order, not to pay attention to cases which user open file explorer & close it, without selecting an image.
             if (path != "")
+            {
+                DeleteImages();
+
                 File.Copy(path, @"..\..\..\..\" + imageName, true);
+                File.SetAttributes(@"..\..\..\..\" + imageName, FileAttributes.Hidden);
+            }
         }
 
         #endregion

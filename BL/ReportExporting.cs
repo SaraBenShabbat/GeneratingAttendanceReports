@@ -1,11 +1,11 @@
 ﻿using System.Text;
-using System.IO;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using GemBox.Spreadsheet;
-using System.Linq;
 using DLL;
 
 namespace BL
@@ -22,10 +22,10 @@ namespace BL
 
         #region Methods
 
-        public void ExportActivities(string idNumber, NumericUpDown month, NumericUpDown year, Label resultLbl)
+        public void ExportActivities(string idNumber, NumericUpDown month, NumericUpDown year, Label resultLbl, string selectedFolder)
         {
             DataTable dataTable = GetDataFromDB(idNumber, month, year, resultLbl);
-            ExportData(dataTable, resultLbl);
+            ExportData(dataTable, resultLbl, selectedFolder);
         }
 
         private DataTable GetDataFromDB(string idNumber, NumericUpDown month, NumericUpDown year, Label resultLbl)
@@ -114,7 +114,7 @@ namespace BL
             return command;
         }
 
-        private void ExportData(DataTable dataTable, Label resultLbl)
+        private void ExportData(DataTable dataTable, Label resultLbl, string selectedFolder)
         {
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
@@ -133,11 +133,41 @@ namespace BL
                     StartRow = 2
                 });
 
-            workbook.Save(@"..\..\..\..\Attendance Report.xlsx");
+            string fullPath;
+            if (selectedFolder == null)
+                fullPath = @"..\..\..\..\Attendance Report.xlsx";
+            else
+                fullPath = selectedFolder + @"\Attendance Report.xlsx";
+
+            if (File.Exists(fullPath))
+                if (ReportExporting.FileInUse(fullPath))
+                {
+                    resultLbl.Text = "Please close the file.";
+                    return;
+                }
+
+            resultLbl.Text = "true";
+
+            workbook.Save(fullPath);
 
             resultLbl.Text = remark + "R=" + dataTable.Rows.Count.ToString() + "__C=" + dataTable.Columns.Count.ToString();
         }
 
+        static bool FileInUse(string path)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    bool x = fs.CanWrite;
+                }
+                return false;
+            }
+            catch (IOException ex)
+            {
+                return true;
+            }
+        }
     }
 
     #endregion

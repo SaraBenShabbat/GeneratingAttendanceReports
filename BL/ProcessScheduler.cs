@@ -1,13 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Text;
+using System.IO;
 using System.Drawing;
-using System.Drawing.Imaging;
+using System.Drawing.Imaging
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using System.IO;
-using System.Text;
-using System.Threading;
-using System;
-using System.Threading.Tasks;
 
 namespace BL
 {
