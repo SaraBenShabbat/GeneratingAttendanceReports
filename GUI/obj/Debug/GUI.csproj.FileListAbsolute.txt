@@ -248,6 +248,7 @@ C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.Rest.C
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.Net.Http.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.Reflection.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.Runtime.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.Runtime.WindowsRuntime.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.Security.Cryptography.Algorithms.dll
@@ -259,11 +260,12 @@ C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\ZedGraph.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\OpenCvSharp.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.WindowsAzure.Storage.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\DLL.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\GemBox.Spreadsheet.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\OpenCvSharp.Extensions.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
-C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\System.IO.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\BL.pdb
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\BL.dll.config
@@ -279,6 +281,8 @@ C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.Window
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.WindowsAzure.Storage.xml
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\DLL.pdb
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\DLL.dll.config
+C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.xml
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.xml
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\GemBox.Spreadsheet.xml
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\OpenCvSharp.Extensions.pdb
@@ -308,7 +312,3 @@ C:\Users\User\Desktop\FinalProject + Git\projects\GUI\obj\Debug\GUI.Properties.R
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\obj\Debug\GUI.exe
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\obj\Debug\GUI.pdb
-C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.DirectShow.dll
-C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.dll
-C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.DirectShow.xml
-C:\Users\User\Desktop\FinalProject + Git\projects\GUI\bin\Debug\AForge.Video.xml

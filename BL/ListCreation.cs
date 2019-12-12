@@ -76,7 +76,7 @@ namespace BL
 
         private void WriteCompanyNameToFile()
         {
-            string path = @"..\..\..\..\companyName.txt";
+            string path = @"C:\Generating Attendance Reports - Files\\companyName.txt";
             FileStream fs = null;
             try
             {

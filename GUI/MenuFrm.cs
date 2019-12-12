@@ -174,8 +174,12 @@ namespace GUI
 
         private async void button1_Click_1Async(object sender, EventArgs e)
         {
-            ProcessScheduler processScheduler = new ProcessScheduler(label1);
-            processScheduler.MainAsync();
+            if (timer1.Enabled == true)
+            {
+                timer1.Start();
+                ProcessScheduler processScheduler = new ProcessScheduler(label1);
+                processScheduler.MainAsync();
+            }
         }
     }
 }

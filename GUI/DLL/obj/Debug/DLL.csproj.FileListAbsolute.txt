@@ -15,6 +15,5 @@ C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\bin\Debug\EntityFramew
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\bin\Debug\EntityFramework.xml
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\obj\Debug\DLL.dll
 C:\Users\User\Desktop\FinalProject + Git\projects\GUI\DLL\obj\Debug\DLL.pdb

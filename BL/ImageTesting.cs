@@ -36,7 +36,7 @@ namespace BL
 
         public ImageTesting()
         {
-            companyName = File.ReadAllText(@"..\..\..\..\companyName.txt", Encoding.UTF8);
+            companyName = File.ReadAllText(@"C:\Generating Attendance Reports - Files\companyName.txt", Encoding.UTF8);
             imageName = companyName + ".jpg";
         }
 
@@ -67,8 +67,8 @@ namespace BL
             {
                 DeleteImages();
 
-                File.Copy(path, @"..\..\..\..\" + imageName, true);
-                File.SetAttributes(@"..\..\..\..\" + imageName, FileAttributes.Hidden);
+                File.Copy(path, @"C:\Generating Attendance Reports - Files\" + imageName, true);
+                File.SetAttributes(@"C:\Generating Attendance Reports - Files\" + imageName, FileAttributes.Hidden);
             }
         }
 
@@ -107,7 +107,7 @@ namespace BL
             IList<DetectedFace> faces = await faceClient.Face.DetectWithUrlAsync("https://sarabenshabbatproject.blob.core.windows.net/newcontainer/" + imageName + guid, true, false);
 
             // Crop all the faces in the image.
-            Image img = Image.FromFile(@"..\..\..\..\" + imageName);
+            Image img = Image.FromFile(@"C:\Generating Attendance Reports - Files\" + imageName);
 
             // If, at least - one face detected in the img.
             if (faces.Count != 0)

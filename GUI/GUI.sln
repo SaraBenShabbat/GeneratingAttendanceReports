@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "..\BL\BL.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{76ECD203-F022-4409-9C74-59EA353010E6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "..\Installer\Installer.vdproj", "{14E4C52E-8C1C-4C77-BBAE-7E4F3057EA5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{76ECD203-F022-4409-9C74-59EA353010E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76ECD203-F022-4409-9C74-59EA353010E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76ECD203-F022-4409-9C74-59EA353010E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E4C52E-8C1C-4C77-BBAE-7E4F3057EA5D}.Debug|Any CPU.ActiveCfg = Debug
+		{14E4C52E-8C1C-4C77-BBAE-7E4F3057EA5D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

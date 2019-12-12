@@ -121,7 +121,7 @@ namespace BL
             ExcelFile workbook = new ExcelFile();
             var worksheet = workbook.Worksheets.Add("Activities");
 
-            string companyName = File.ReadAllText(@"..\..\..\..\companyName.txt", Encoding.UTF8);
+            string companyName = File.ReadAllText(@"C:\Generating Attendance Reports - Files\companyName.txt", Encoding.UTF8);
             worksheet.Cells[0, 0].Value = "The attendance Report in " + companyName + "(- according to your filter selection):";
 
 
@@ -135,7 +135,7 @@ namespace BL
 
             string fullPath;
             if (selectedFolder == null)
-                fullPath = @"..\..\..\..\Attendance Report.xlsx";
+                fullPath = @"C:\Users\User\Downloads\Attendance Report.xlsx";
             else
                 fullPath = selectedFolder + @"\Attendance Report.xlsx";
 

@@ -2,7 +2,7 @@
 using System.Text;
 using System.IO;
 using System.Drawing;
-using System.Drawing.Imaging
+using System.Drawing.Imaging;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +31,7 @@ namespace BL
         public ProcessScheduler(Label results)
         {
             this.results = results;
-            companyName = File.ReadAllText(@"..\..\..\..\companyName.txt", Encoding.UTF8);
+            companyName = File.ReadAllText(@"C:\Generating Attendance Reports - Files\companyName.txt", Encoding.UTF8);
             imageName = companyName + ".jpg";
         }
 
@@ -46,6 +46,7 @@ namespace BL
             Device = new VideoCaptureDevice(WebcamColl[0].MonikerString);
             Device.NewFrame += Device_NewFrame;
             Device.Start();
+            // Thread.Sleep(20000);
             Thread.Sleep(1000);
             Device.SignalToStop();
 
@@ -60,7 +61,7 @@ namespace BL
         {
             Bitmap bmp = new Bitmap(960 * 2, 480 * 2);
             bmp = (Bitmap)e.Frame.Clone();
-            bmp.Save(string.Format(@"..\..\..\..\{0}", imageName), ImageFormat.Jpeg);
+            bmp.Save(string.Format(@"C:\Generating Attendance Reports - Files\{0}", imageName), ImageFormat.Jpeg);
 
             bmp.Dispose();
 

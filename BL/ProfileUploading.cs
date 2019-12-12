@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Web;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Windows.Data.Json
+using Windows.Data.Json;
 using DLL;
 
 namespace BL
@@ -32,7 +32,7 @@ namespace BL
 
         public ProfileUploading()
         {
-            companyName = File.ReadAllText(@"..\..\..\..\companyName.txt", Encoding.UTF8);
+            companyName = File.ReadAllText(@"C:\Generating Attendance Reports - Files\companyName.txt", Encoding.UTF8);
         }
 
         #endregion

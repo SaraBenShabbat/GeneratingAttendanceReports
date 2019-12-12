@@ -93,18 +93,18 @@ namespace BL
 
         private void SaveProfileImage()
         {
-            snapshot.Save(string.Format(@"..\..\..\..\{0}.jpg",
+            snapshot.Save(string.Format(@"C:\Generating Attendance Reports - Files\{0}.jpg",
  ProfileUploading.currentEmployee.employeeId + ProfileUploading.currentEmployee.numUploadedProfiles), ImageFormat.Jpeg);
 
-            File.SetAttributes(string.Format(@"..\..\..\..\{0}.jpg",
+            File.SetAttributes(string.Format(@"C:\Generating Attendance Reports - Files\{0}.jpg",
  ProfileUploading.currentEmployee.employeeId + ProfileUploading.currentEmployee.numUploadedProfiles), FileAttributes.Hidden);
         }
 
         private void SaveTestingImage()
         {
-            snapshot.Save(string.Format(@"..\..\..\..\" + imageName), ImageFormat.Jpeg);
+            snapshot.Save(string.Format(@"C:\Generating Attendance Reports - Files\" + imageName), ImageFormat.Jpeg);
 
-            File.SetAttributes(string.Format(@"..\..\..\..\" + imageName), FileAttributes.Hidden);
+            File.SetAttributes(string.Format(@"C:\Generating Attendance Reports - Files\" + imageName), FileAttributes.Hidden);
         }
 
         #endregion
@@ -123,7 +123,7 @@ namespace BL
             container.CreateIfNotExists(BlobContainerPublicAccessType.Container);
 
             var blockBlob = container.GetBlockBlobReference(imageName);
-            using (var fileStream = File.OpenRead(@"..\..\..\..\" + imageName))
+            using (var fileStream = File.OpenRead(@"C:\Generating Attendance Reports - Files\" + imageName))
             {
                 blockBlob.UploadFromStream(fileStream);
                 fileStream.Close();
@@ -154,7 +154,7 @@ namespace BL
         {
             string fixedImgName = imageName.Substring(0, 3);
 
-            String[] fileNames = Directory.GetFiles(@"..\..\..\..\", fixedImgName + "*.jpg");
+            String[] fileNames = Directory.GetFiles(@"C:\Generating Attendance Reports - Files\", fixedImgName + "*.jpg");
             foreach (String fileName in fileNames)
                 File.Delete(fileName);
 
