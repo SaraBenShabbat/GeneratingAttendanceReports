@@ -51,7 +51,7 @@
             this.enabledAddEmpBtn = new System.Windows.Forms.Button();
             this.exportBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.testingImgTimer = new System.Windows.Forms.Timer(this.components);
             this.addEmpPanel.SuspendLayout();
             this.testImagePanel.SuspendLayout();
             this.addProfilePanel.SuspendLayout();
@@ -330,7 +330,7 @@
         public System.Windows.Forms.Button fileExplorerBtn;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer testingImgTimer;
     }
 }
 

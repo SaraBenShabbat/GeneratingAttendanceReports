@@ -20,7 +20,6 @@ namespace BL
         private PictureBox pictureBox;
         private VideoCapture capture;
         private Mat frame;
-        private Bitmap image;
         private Thread camera;
         private Bitmap snapshot;
         protected Label showResults;
@@ -51,17 +50,18 @@ namespace BL
         {
             frame = new Mat();
             capture = new VideoCapture(0);
+
             capture.Open(0);
 
             while (capture.IsOpened())
             {
                 capture.Read(frame);
-                image = BitmapConverter.ToBitmap(frame);
+                // image = new Bitmap(frame.Width, frame.Height, PixelFormat.Format16bppRgb555);
                 if (pictureBox.Image != null)
                 {
                     pictureBox.Image.Dispose();
                 }
-                pictureBox.Image = image;
+                pictureBox.Image = BitmapConverter.ToBitmap(frame);
             }
         }
 
@@ -69,6 +69,10 @@ namespace BL
         {
             capturingBtn.Enabled = false;
             snapshot = new Bitmap(pictureBox.Image);
+
+            capture.Release();
+            capture.Dispose();
+            camera.Abort();
 
             // The function manages the existance from this form.
             ManageExist(takingProfileBtn);
@@ -82,8 +86,7 @@ namespace BL
         }
 
         public void ManageExist(Button takingProfileBtn)
-        {
-            capture.Release();
+        {           
             takingProfileBtn.Enabled = true;
         }
 

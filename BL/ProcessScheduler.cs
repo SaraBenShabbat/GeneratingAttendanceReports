@@ -46,15 +46,13 @@ namespace BL
             Device = new VideoCaptureDevice(WebcamColl[0].MonikerString);
             Device.NewFrame += Device_NewFrame;
             Device.Start();
+            // For 
             // Thread.Sleep(20000);
             Thread.Sleep(1000);
             Device.SignalToStop();
 
             ImageTesting imageTesting = new ImageTesting();
             await imageTesting.CropFacesAsync(results);
-            // Thread.Sleep(25000);
-            //  await MainAsync();
-            await MainAsync();
         }
 
         static void Device_NewFrame(object sender, NewFrameEventArgs e)

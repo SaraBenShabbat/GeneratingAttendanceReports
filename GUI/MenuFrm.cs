@@ -174,9 +174,10 @@ namespace GUI
 
         private async void button1_Click_1Async(object sender, EventArgs e)
         {
-            if (timer1.Enabled == true)
+            // Both toggle and specifiec number of testings - the first from 2 of them.
+            if (testingImgTimer.Enabled == true)
             {
-                timer1.Start();
+                testingImgTimer.Start();
                 ProcessScheduler processScheduler = new ProcessScheduler(label1);
                 processScheduler.MainAsync();
             }
