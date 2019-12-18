@@ -95,6 +95,9 @@ SELECT employeeId, firstName +' '+lastName AS 'Full Name', activityDate AS 'Acti
 ELSE 'Existance' END AS 'activity Status'
    FROM activities a JOIN employees e ON a.employeeNumber = e.employeeNumber
 
+   select * FROM activities
+    WHERE activityDate > 80
+
 
 
 

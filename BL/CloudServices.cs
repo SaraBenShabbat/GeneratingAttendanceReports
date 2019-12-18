@@ -56,7 +56,7 @@ namespace BL
             while (capture.IsOpened())
             {
                 capture.Read(frame);
-                // image = new Bitmap(frame.Width, frame.Height, PixelFormat.Format16bppRgb555);
+
                 if (pictureBox.Image != null)
                 {
                     pictureBox.Image.Dispose();
@@ -68,13 +68,12 @@ namespace BL
         public void Capture(bool isTesting, Button takingProfileBtn, Button capturingBtn, Button nextStepBtn)
         {
             capturingBtn.Enabled = false;
+
+            // Taking the last image the camera has caught and close the video fike.
             snapshot = new Bitmap(pictureBox.Image);
-
             capture.Release();
-            capture.Dispose();
-            camera.Abort();
 
-            // The function manages the existance from this form.
+            // Manage the exit from 'CapturingImgFrm'
             ManageExist(takingProfileBtn);
 
             capturingImageFrm.Close();
@@ -86,7 +85,11 @@ namespace BL
         }
 
         public void ManageExist(Button takingProfileBtn)
-        {           
+        {
+         
+            capture.Dispose();
+            camera.Abort();
+
             takingProfileBtn.Enabled = true;
         }
 

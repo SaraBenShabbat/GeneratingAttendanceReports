@@ -36,3 +36,13 @@ C:\Users\User\Desktop\Currently worknig\GUI\DLL\bin\Debug\EntityFramework.SqlSer
 C:\Users\User\Desktop\Currently worknig\GUI\DLL\obj\Debug\DLL.dll
 C:\Users\User\Desktop\Currently worknig\GUI\DLL\obj\Debug\DLL.pdb
 C:\Users\User\Desktop\Currently worknig\GUI\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\DLL.dll.config
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\DLL.dll
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\DLL.pdb
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\obj\Debug\DLL.dll
+C:\Users\User\Desktop\FinalProject + Git\GUI\DLL\obj\Debug\DLL.pdb
