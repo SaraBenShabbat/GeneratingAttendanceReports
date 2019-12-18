@@ -1,3 +1,4 @@
+
 # - Generating Attendance Reports by face recognition. - 
 This is a self project for generating attendance reports by face recognition, using Cloud Services and AI.
 
@@ -22,6 +23,4 @@ Instructions -
 - The system recalls the secretary about it.
 -	The secretary can export worker reports to Excel; she can also filter them according to predefined criterias.
 -	The secretary can export attendance reports to Excel; she can also filter them according to predefined criterias.
-
-
 
