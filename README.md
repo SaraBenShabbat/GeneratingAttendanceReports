@@ -1,4 +1,5 @@
-Generating Attendance Reports - a self project for generating attendance reports by face recognition, using Cloud Services and AI.
+- Generating Attendance Reports by face recognition. -
+This is a self project for generating attendance reports by face recognition, using Cloud Services and AI.
 
 Introduction
 -	The program provides tracking on entries & departures of employees to the workplace, without human touch; only by face recognition.
