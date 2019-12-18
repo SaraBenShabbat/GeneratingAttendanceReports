@@ -1,4 +1,4 @@
-Generating Attendance Reports by face recognition
+- Generating Attendance Reports by face recognition. - 
 This is a self project for generating attendance reports by face recognition, using Cloud Services and AI.
 
 Introduction
