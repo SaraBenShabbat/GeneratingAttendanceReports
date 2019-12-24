@@ -17,7 +17,7 @@ Feature listing -
 
 Instructions -
 -	The secretary sets up the system by running the installation file; during the installation the secretary enters the company name.
--	The secretary enters the workers list. For every worker she enters personal details & profile picture.
+-	The secretary enters the workers list. For every worker she enters personal details and profile picture.
 - The secretary has to update the worker profiles once a year by selecting a worker from the worker list.
 - The system recalls the secretary about it.
 -	The secretary can export worker reports to Excel; she can also filter them according to predefined criterias.
