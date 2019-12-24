@@ -5,7 +5,7 @@ Introduction -
 -	The program provides tracking on entries & departures of employees to the workplace, without human touch; only by face recognition.
   Just, once a year the secretary has to upload the profiles of the employees & all the rest - the program does by itself, 
   using artificial intelligence & machine learning technologies.
--	The software is designed for workplaces that are interested for generating attendance reports effortless, without human touch & in
+-	The software is designed for workplaces that are interested for generating attendance reports effortless, without human touch and in
   a high level of reliability…
   When the workplace using this program – there is no demanding from the worker to put a finger print, to pass a card or in the worst 
   case to manage an attendance log manually.
