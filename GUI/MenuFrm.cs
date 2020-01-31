@@ -172,15 +172,15 @@ namespace GUI
             expoertingFrm.Show();
         }
 
-        private async void button1_Click_1Async(object sender, EventArgs e)
-        {
-            // Both toggle and specifiec number of testings - the first from 2 of them.
-            if (testingImgTimer.Enabled == true)
-            {
-                testingImgTimer.Start();
-                ProcessScheduler processScheduler = new ProcessScheduler(label1);
-                processScheduler.MainAsync();
-            }
-        }
+        //private async void button1_Click_1Async(object sender, EventArgs e)
+        //{
+        //    // Both toggle and specifiec number of testings - the first from 2 of them.
+        //    if (testingImgTimer.Enabled == true)
+        //    {
+        //        testingImgTimer.Start();
+        //        ProcessScheduler processScheduler = new ProcessScheduler(label1);
+        //        processScheduler.MainAsync();
+        //    }
+        //}
     }
 }

@@ -94,7 +94,7 @@ namespace BL
             // Request headers
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-            queryString["detectionModel"] = "detection_02";
+            // queryString["detectionModel"] = "detection_02";
 
 
             // Request parameters

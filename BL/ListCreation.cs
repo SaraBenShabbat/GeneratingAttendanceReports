@@ -115,7 +115,7 @@ namespace BL
             a.Text = response.StatusCode.ToString();
         }
 
-        private async Task FuncReturnsListOfAllMyFaceLists_DoIhaveToUseItAsync()
+        public async Task FuncReturnsListOfAllMyFaceLists_DoIhaveToUseItAsync()
         {
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
@@ -128,6 +128,8 @@ namespace BL
             var uri = "https://westeurope.api.cognitive.microsoft.com/face/v1.0/facelists?" + queryString;
 
             var response = await client.GetAsync(uri);
+
+            Console.WriteLine(response.ToString());
         }
 
         private async Task FuncReturnsAllPersistedFaceIdsOfFaceList_DoIhaveToUseItAsync()
