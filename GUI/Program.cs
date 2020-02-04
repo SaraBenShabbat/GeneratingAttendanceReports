@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GUI
 {
@@ -13,7 +14,11 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuFrm());
+
+            if (File.Exists(@"C:\Generating Attendance Reports - Files\\companyName.txt"))
+                Application.Run(new MenuFrm());
+            else
+                Application.Run(new ListCreationFrm());
         }
     }
 }

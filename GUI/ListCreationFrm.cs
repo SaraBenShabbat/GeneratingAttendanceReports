@@ -27,8 +27,7 @@ namespace GUI
 
         private void createFaceListBtn_Click(object sender, EventArgs e)
         {
-            listCreation.CreateFaceListAsync(this.faceListTxtBox, this.label1);
-            //listCreation.MakeRequest(this.createFaceListBtn);
+            listCreation.CreateFaceListAsync(this.faceListTxtBox, this.label1, this.createFaceListBtn);
         }
 
         #endregion
