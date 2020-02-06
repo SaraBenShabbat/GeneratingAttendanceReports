@@ -296,7 +296,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MenuFrm";
             this.Text = "Menu Form";
-            this.Load += new System.EventHandler(this.MenuFrm_Load_1);
+            this.Load += new System.EventHandler(this.MenuFrm_Load);
             this.addEmpPanel.ResumeLayout(false);
             this.testImagePanel.ResumeLayout(false);
             this.addProfilePanel.ResumeLayout(false);
