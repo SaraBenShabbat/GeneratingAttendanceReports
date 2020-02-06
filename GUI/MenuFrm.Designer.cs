@@ -51,10 +51,12 @@
             this.enabledAddEmpBtn = new System.Windows.Forms.Button();
             this.exportBtn = new System.Windows.Forms.Button();
             this.testingImgTimer = new System.Windows.Forms.Timer(this.components);
+            this.logo = new System.Windows.Forms.PictureBox();
             this.addEmpPanel.SuspendLayout();
             this.testImagePanel.SuspendLayout();
             this.addProfilePanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // addEmpBtn
@@ -171,7 +173,7 @@
             this.testImagePanel.Controls.Add(this.imageTestingRegionLbl);
             this.testImagePanel.Controls.Add(this.ImageTestingBtn);
             this.testImagePanel.Enabled = false;
-            this.testImagePanel.Location = new System.Drawing.Point(617, 9);
+            this.testImagePanel.Location = new System.Drawing.Point(649, 9);
             this.testImagePanel.Name = "testImagePanel";
             this.testImagePanel.Size = new System.Drawing.Size(281, 149);
             this.testImagePanel.TabIndex = 15;
@@ -205,7 +207,7 @@
             this.addProfilePanel.Controls.Add(this.currentEmpIdTxtBox);
             this.addProfilePanel.Controls.Add(this.newProfileRegionLbl);
             this.addProfilePanel.Enabled = false;
-            this.addProfilePanel.Location = new System.Drawing.Point(317, 9);
+            this.addProfilePanel.Location = new System.Drawing.Point(328, 9);
             this.addProfilePanel.Name = "addProfilePanel";
             this.addProfilePanel.Size = new System.Drawing.Size(281, 149);
             this.addProfilePanel.TabIndex = 15;
@@ -217,7 +219,7 @@
             this.panel1.Controls.Add(this.managementLbl);
             this.panel1.Controls.Add(this.enableAddProfileBtn);
             this.panel1.Controls.Add(this.enabledAddEmpBtn);
-            this.panel1.Location = new System.Drawing.Point(268, 196);
+            this.panel1.Location = new System.Drawing.Point(285, 196);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(374, 193);
             this.panel1.TabIndex = 16;
@@ -263,7 +265,7 @@
             // 
             // exportBtn
             // 
-            this.exportBtn.Location = new System.Drawing.Point(727, 265);
+            this.exportBtn.Location = new System.Drawing.Point(728, 285);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Size = new System.Drawing.Size(140, 43);
             this.exportBtn.TabIndex = 17;
@@ -271,12 +273,21 @@
             this.exportBtn.UseVisualStyleBackColor = true;
             this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
+            // logo
+            // 
+            this.logo.Location = new System.Drawing.Point(14, 167);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(265, 195);
+            this.logo.TabIndex = 18;
+            this.logo.TabStop = false;
+            // 
             // MenuFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(913, 412);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(942, 434);
+            this.Controls.Add(this.logo);
             this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.addProfilePanel);
@@ -285,11 +296,13 @@
             this.Controls.Add(this.label1);
             this.Name = "MenuFrm";
             this.Text = "Menu Form";
+            this.Load += new System.EventHandler(this.MenuFrm_Load_1);
             this.addEmpPanel.ResumeLayout(false);
             this.testImagePanel.ResumeLayout(false);
             this.addProfilePanel.ResumeLayout(false);
             this.addProfilePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +331,7 @@
         public System.Windows.Forms.Button fileExplorerBtn;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Timer testingImgTimer;
+        private System.Windows.Forms.PictureBox logo;
     }
 }
 

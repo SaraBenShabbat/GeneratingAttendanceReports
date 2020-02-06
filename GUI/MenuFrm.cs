@@ -24,12 +24,23 @@ namespace GUI
         public MenuFrm()
         {
             InitializeComponent();
-            label1.Location = new Point(0, 150);
         }
 
         #endregion
 
         #region Methods - Triggers For Actions 
+
+        private void MenuFrm_Load_1(object sender, EventArgs e)
+        {
+            label1.Location = new Point(0, 150);
+            this.logo.ImageLocation = @"C:\Users\User\Desktop\ProjectBook\logo.png";
+            this.logo.SizeMode = PictureBoxSizeMode.AutoSize;
+        }
+
+        private void MenuFrm_Load(object sender, EventArgs e)
+        {
+            label1.Location = new Point(0, 150);
+        }
 
         private void AddEmpBtn_Click(object sender, EventArgs e)
         {

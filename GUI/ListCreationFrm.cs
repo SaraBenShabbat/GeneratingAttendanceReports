@@ -31,5 +31,13 @@ namespace GUI
         }
 
         #endregion
+
+        private void nextFrmBtn_Click(object sender, EventArgs e)
+        {
+            MenuFrm menuFrm = new MenuFrm();
+            menuFrm.Show();
+
+            this.Hide();
+        }
     }
 }
