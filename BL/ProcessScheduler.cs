@@ -61,8 +61,8 @@ namespace BL
             bmp = (Bitmap)e.Frame.Clone();
             bmp.Save(string.Format(@"C:\Generating Attendance Reports - Files\{0}", imageName), ImageFormat.Jpeg);
 
+            // (sender as VideoCaptureDevice).Stop();
             bmp.Dispose();
-
         }
 
         #endregion
@@ -114,8 +114,8 @@ namespace BL
 
         public async Task<int> CountRecursivelyAsync(int count)
         {
-            if (count <= 0)
-                return count;
+            //if (count <= 0)
+            //    return count;
 
 
             FilterInfoCollection WebcamColl;
@@ -160,7 +160,7 @@ namespace BL
             for (int trycount = 0; trycount < tries; trycount++)
                 try
                 {
-                    await MainAsync();
+                    //await MainAsync();
                 }
                 catch (Exception Ex)
                 {
@@ -174,7 +174,7 @@ namespace BL
         {
             //MainAsync();
 
-            Task.WaitAll(MainAsync());
+            ///////////////////  Task.WaitAll(MainAsync());
             //Console.WriteLine("------------------------------------------|||||||||||||||||||||||||||||");
 
             // MainAsync().Wait();

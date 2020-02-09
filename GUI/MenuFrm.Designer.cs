@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuFrm));
             this.addEmpBtn = new System.Windows.Forms.Button();
             this.takingProfileBtn = new System.Windows.Forms.Button();
             this.ImageTestingBtn = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.exportBtn = new System.Windows.Forms.Button();
             this.testingImgTimer = new System.Windows.Forms.Timer(this.components);
             this.logo = new System.Windows.Forms.PictureBox();
+            this.newFeature = new System.Windows.Forms.Button();
             this.addEmpPanel.SuspendLayout();
             this.testImagePanel.SuspendLayout();
             this.addProfilePanel.SuspendLayout();
@@ -265,7 +267,7 @@
             // 
             // exportBtn
             // 
-            this.exportBtn.Location = new System.Drawing.Point(728, 285);
+            this.exportBtn.Location = new System.Drawing.Point(728, 346);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Size = new System.Drawing.Size(140, 43);
             this.exportBtn.TabIndex = 17;
@@ -275,11 +277,22 @@
             // 
             // logo
             // 
+            this.logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo.InitialImage")));
             this.logo.Location = new System.Drawing.Point(14, 167);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(265, 195);
             this.logo.TabIndex = 18;
             this.logo.TabStop = false;
+            // 
+            // newFeature
+            // 
+            this.newFeature.Location = new System.Drawing.Point(728, 193);
+            this.newFeature.Name = "newFeature";
+            this.newFeature.Size = new System.Drawing.Size(140, 37);
+            this.newFeature.TabIndex = 20;
+            this.newFeature.Text = "Start";
+            this.newFeature.UseVisualStyleBackColor = true;
+            this.newFeature.Click += new System.EventHandler(this.button2_Click);
             // 
             // MenuFrm
             // 
@@ -287,6 +300,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(942, 434);
+            this.Controls.Add(this.newFeature);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.panel1);
@@ -332,6 +346,7 @@
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Timer testingImgTimer;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Button newFeature;
     }
 }
 

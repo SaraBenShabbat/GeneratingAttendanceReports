@@ -24,6 +24,13 @@ namespace GUI
         public MenuFrm()
         {
             InitializeComponent();
+
+            label1.Location = new Point(0, 150);
+
+
+            testingImgTimer.Interval = 30000;
+            testingImgTimer.Tick += new EventHandler(DoSomething);
+            testingImgTimer.Enabled = false;
         }
 
         #endregion
@@ -32,9 +39,8 @@ namespace GUI
 
         private void MenuFrm_Load(object sender, EventArgs e)
         {
-            label1.Location = new Point(0, 150);
-            this.logo.ImageLocation = @"https://sarabenshabbatproject.blob.core.windows.net/newcontainer/logo.png";
-            this.logo.SizeMode = PictureBoxSizeMode.AutoSize;
+            logo.ImageLocation = @"https://sarabenshabbatproject.blob.core.windows.net/newcontainer/logo.png";
+            logo.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         private void AddEmpBtn_Click(object sender, EventArgs e)
@@ -126,6 +132,36 @@ namespace GUI
             imageTesting.CropFacesAsync(label1, takingPicBtn, fileExplorerBtn, ImageTestingBtn);
         }
 
+        private void exportBtn_Click(object sender, EventArgs e)
+        {
+            (sender as Button).Enabled = false;
+            expoertingFrm = new ExportingFrm(sender as Button);
+            expoertingFrm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //ProcessScheduler processScheduler = new ProcessScheduler(label1);
+            //processScheduler.MainAsync();
+
+
+
+            if (newFeature.Text == "Start")
+            {
+                testingImgTimer.Enabled = true;
+                testingImgTimer.Start();
+
+                newFeature.Text = "Stop";
+            }
+            else
+            {
+                testingImgTimer.Enabled = false;
+                testingImgTimer.Stop();
+
+                newFeature.Text = "Start";
+            }
+        }
+
         #endregion
 
         #region Functions
@@ -134,6 +170,12 @@ namespace GUI
         {
             if (currentlyEnabled != null)
                 currentlyEnabled.Enabled = false;
+        }
+
+        private void DoSomething(Object sender, EventArgs e)
+        {
+            ProcessScheduler processScheduler = new ProcessScheduler(label1);
+            processScheduler.MainAsync();
         }
 
         #endregion
@@ -171,22 +213,5 @@ namespace GUI
 
         #endregion
 
-        private void exportBtn_Click(object sender, EventArgs e)
-        {
-            (sender as Button).Enabled = false;
-            expoertingFrm = new ExportingFrm(sender as Button);
-            expoertingFrm.Show();
-        }
-
-        //private async void button1_Click_1Async(object sender, EventArgs e)
-        //{
-        //    // Both toggle and specifiec number of testings - the first from 2 of them.
-        //    if (testingImgTimer.Enabled == true)
-        //    {
-        //        testingImgTimer.Start();
-        //        ProcessScheduler processScheduler = new ProcessScheduler(label1);
-        //        processScheduler.MainAsync();
-        //    }
-        //}
     }
 }

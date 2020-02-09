@@ -33,11 +33,13 @@
             this.createFaceListBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.nextFrmBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // createFaceLstLbl
             // 
-            this.createFaceLstLbl.Location = new System.Drawing.Point(75, 22);
+            this.createFaceLstLbl.Location = new System.Drawing.Point(131, 23);
             this.createFaceLstLbl.Name = "createFaceLstLbl";
             this.createFaceLstLbl.Size = new System.Drawing.Size(198, 23);
             this.createFaceLstLbl.TabIndex = 7;
@@ -46,7 +48,7 @@
             // 
             // faceListTxtBox
             // 
-            this.faceListTxtBox.Location = new System.Drawing.Point(78, 68);
+            this.faceListTxtBox.Location = new System.Drawing.Point(131, 70);
             this.faceListTxtBox.Name = "faceListTxtBox";
             this.faceListTxtBox.Size = new System.Drawing.Size(198, 20);
             this.faceListTxtBox.TabIndex = 1;
@@ -54,7 +56,7 @@
             // 
             // createFaceListBtn
             // 
-            this.createFaceListBtn.Location = new System.Drawing.Point(78, 113);
+            this.createFaceListBtn.Location = new System.Drawing.Point(131, 111);
             this.createFaceListBtn.Name = "createFaceListBtn";
             this.createFaceListBtn.Size = new System.Drawing.Size(198, 23);
             this.createFaceListBtn.TabIndex = 0;
@@ -71,7 +73,7 @@
             // 
             // nextFrmBtn
             // 
-            this.nextFrmBtn.Location = new System.Drawing.Point(121, 204);
+            this.nextFrmBtn.Location = new System.Drawing.Point(156, 433);
             this.nextFrmBtn.Name = "nextFrmBtn";
             this.nextFrmBtn.Size = new System.Drawing.Size(104, 23);
             this.nextFrmBtn.TabIndex = 9;
@@ -79,11 +81,20 @@
             this.nextFrmBtn.UseVisualStyleBackColor = true;
             this.nextFrmBtn.Click += new System.EventHandler(this.nextFrmBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(83, 231);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 50);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // ListCreationFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 254);
+            this.ClientSize = new System.Drawing.Size(452, 468);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nextFrmBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createFaceLstLbl);
@@ -91,6 +102,7 @@
             this.Controls.Add(this.createFaceListBtn);
             this.Name = "ListCreationFrm";
             this.Text = "ListCreationFrm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button createFaceListBtn;
         private System.Windows.Forms.Button nextFrmBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
