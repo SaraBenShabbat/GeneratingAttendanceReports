@@ -25,23 +25,20 @@ namespace GUI
         {
             InitializeComponent();
 
+            logoPicBox.ImageLocation = @"https://sarabenshabbatproject.blob.core.windows.net/newcontainer/logo.png";
+            logoPicBox.SizeMode = PictureBoxSizeMode.AutoSize;
+
+            managePanel.Left = (this.ClientSize.Width - managePanel.Width) / 2;
             label1.Location = new Point(0, 150);
 
-
             testingImgTimer.Interval = 30000;
-            testingImgTimer.Tick += new EventHandler(DoSomething);
+            testingImgTimer.Tick += new EventHandler(EnvokeProcessScheduler);
             testingImgTimer.Enabled = false;
         }
 
         #endregion
 
         #region Methods - Triggers For Actions 
-
-        private void MenuFrm_Load(object sender, EventArgs e)
-        {
-            logo.ImageLocation = @"https://sarabenshabbatproject.blob.core.windows.net/newcontainer/logo.png";
-            logo.SizeMode = PictureBoxSizeMode.AutoSize;
-        }
 
         private void AddEmpBtn_Click(object sender, EventArgs e)
         {
@@ -139,26 +136,24 @@ namespace GUI
             expoertingFrm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void newFeatureBtn_Click(object sender, EventArgs e)
         {
             //ProcessScheduler processScheduler = new ProcessScheduler(label1);
             //processScheduler.MainAsync();
 
-
-
-            if (newFeature.Text == "Start")
+            if (newFeatureBtn.Text == "Start simulate camera")
             {
                 testingImgTimer.Enabled = true;
                 testingImgTimer.Start();
 
-                newFeature.Text = "Stop";
+                newFeatureBtn.Text = "Stop simulate camera";
             }
             else
             {
                 testingImgTimer.Enabled = false;
                 testingImgTimer.Stop();
 
-                newFeature.Text = "Start";
+                newFeatureBtn.Text = "Start simulate camera";
             }
         }
 
@@ -172,7 +167,7 @@ namespace GUI
                 currentlyEnabled.Enabled = false;
         }
 
-        private void DoSomething(Object sender, EventArgs e)
+        private void EnvokeProcessScheduler(Object sender, EventArgs e)
         {
             ProcessScheduler processScheduler = new ProcessScheduler(label1);
             processScheduler.MainAsync();

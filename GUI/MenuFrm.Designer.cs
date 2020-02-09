@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuFrm));
             this.addEmpBtn = new System.Windows.Forms.Button();
             this.takingProfileBtn = new System.Windows.Forms.Button();
             this.ImageTestingBtn = new System.Windows.Forms.Button();
@@ -45,20 +44,20 @@
             this.fileExplorerBtn = new System.Windows.Forms.Button();
             this.takingPicBtn = new System.Windows.Forms.Button();
             this.addProfilePanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.managePanel = new System.Windows.Forms.Panel();
             this.enableTestImageBtn = new System.Windows.Forms.Button();
             this.managementLbl = new System.Windows.Forms.Label();
             this.enableAddProfileBtn = new System.Windows.Forms.Button();
             this.enabledAddEmpBtn = new System.Windows.Forms.Button();
             this.exportBtn = new System.Windows.Forms.Button();
             this.testingImgTimer = new System.Windows.Forms.Timer(this.components);
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.newFeature = new System.Windows.Forms.Button();
+            this.logoPicBox = new System.Windows.Forms.PictureBox();
+            this.newFeatureBtn = new System.Windows.Forms.Button();
             this.addEmpPanel.SuspendLayout();
             this.testImagePanel.SuspendLayout();
             this.addProfilePanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.managePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // addEmpBtn
@@ -214,17 +213,17 @@
             this.addProfilePanel.Size = new System.Drawing.Size(281, 149);
             this.addProfilePanel.TabIndex = 15;
             // 
-            // panel1
+            // managePanel
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.enableTestImageBtn);
-            this.panel1.Controls.Add(this.managementLbl);
-            this.panel1.Controls.Add(this.enableAddProfileBtn);
-            this.panel1.Controls.Add(this.enabledAddEmpBtn);
-            this.panel1.Location = new System.Drawing.Point(285, 196);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 193);
-            this.panel1.TabIndex = 16;
+            this.managePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.managePanel.Controls.Add(this.enableTestImageBtn);
+            this.managePanel.Controls.Add(this.managementLbl);
+            this.managePanel.Controls.Add(this.enableAddProfileBtn);
+            this.managePanel.Controls.Add(this.enabledAddEmpBtn);
+            this.managePanel.Location = new System.Drawing.Point(285, 196);
+            this.managePanel.Name = "managePanel";
+            this.managePanel.Size = new System.Drawing.Size(374, 193);
+            this.managePanel.TabIndex = 16;
             // 
             // enableTestImageBtn
             // 
@@ -275,24 +274,24 @@
             this.exportBtn.UseVisualStyleBackColor = true;
             this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
-            // logo
+            // logoPicBox
             // 
-            this.logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo.InitialImage")));
-            this.logo.Location = new System.Drawing.Point(14, 167);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(265, 195);
-            this.logo.TabIndex = 18;
-            this.logo.TabStop = false;
+            this.logoPicBox.InitialImage = null;
+            this.logoPicBox.Location = new System.Drawing.Point(14, 167);
+            this.logoPicBox.Name = "logoPicBox";
+            this.logoPicBox.Size = new System.Drawing.Size(265, 195);
+            this.logoPicBox.TabIndex = 18;
+            this.logoPicBox.TabStop = false;
             // 
-            // newFeature
+            // newFeatureBtn
             // 
-            this.newFeature.Location = new System.Drawing.Point(728, 193);
-            this.newFeature.Name = "newFeature";
-            this.newFeature.Size = new System.Drawing.Size(140, 37);
-            this.newFeature.TabIndex = 20;
-            this.newFeature.Text = "Start";
-            this.newFeature.UseVisualStyleBackColor = true;
-            this.newFeature.Click += new System.EventHandler(this.button2_Click);
+            this.newFeatureBtn.Location = new System.Drawing.Point(728, 193);
+            this.newFeatureBtn.Name = "newFeatureBtn";
+            this.newFeatureBtn.Size = new System.Drawing.Size(140, 37);
+            this.newFeatureBtn.TabIndex = 20;
+            this.newFeatureBtn.Text = "Start simulate camera";
+            this.newFeatureBtn.UseVisualStyleBackColor = true;
+            this.newFeatureBtn.Click += new System.EventHandler(this.newFeatureBtn_Click);
             // 
             // MenuFrm
             // 
@@ -300,23 +299,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(942, 434);
-            this.Controls.Add(this.newFeature);
-            this.Controls.Add(this.logo);
+            this.Controls.Add(this.newFeatureBtn);
+            this.Controls.Add(this.logoPicBox);
             this.Controls.Add(this.exportBtn);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.managePanel);
             this.Controls.Add(this.addProfilePanel);
             this.Controls.Add(this.testImagePanel);
             this.Controls.Add(this.addEmpPanel);
             this.Controls.Add(this.label1);
             this.Name = "MenuFrm";
             this.Text = "Menu Form";
-            this.Load += new System.EventHandler(this.MenuFrm_Load);
             this.addEmpPanel.ResumeLayout(false);
             this.testImagePanel.ResumeLayout(false);
             this.addProfilePanel.ResumeLayout(false);
             this.addProfilePanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.managePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,7 +334,7 @@
         private System.Windows.Forms.Panel addEmpPanel;
         private System.Windows.Forms.Panel testImagePanel;
         private System.Windows.Forms.Panel addProfilePanel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel managePanel;
         private System.Windows.Forms.Label managementLbl;
         private System.Windows.Forms.Button enabledAddEmpBtn;
         private System.Windows.Forms.Button enableAddProfileBtn;
@@ -345,8 +343,8 @@
         public System.Windows.Forms.Button fileExplorerBtn;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Timer testingImgTimer;
-        private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Button newFeature;
+        private System.Windows.Forms.PictureBox logoPicBox;
+        private System.Windows.Forms.Button newFeatureBtn;
     }
 }
 

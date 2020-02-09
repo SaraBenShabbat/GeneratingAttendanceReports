@@ -18,7 +18,12 @@ namespace GUI
         public ListCreationFrm()
         {
             InitializeComponent();
+
             listCreation = new ListCreation();
+
+            logoPicBox.Left = (this.ClientSize.Width - logoPicBox.Width) / 2;
+            logoPicBox.ImageLocation = @"https://sarabenshabbatproject.blob.core.windows.net/newcontainer/logo.png";
+            logoPicBox.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         #endregion

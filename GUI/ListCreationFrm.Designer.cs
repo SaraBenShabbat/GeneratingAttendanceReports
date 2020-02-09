@@ -31,10 +31,10 @@
             this.createFaceLstLbl = new System.Windows.Forms.Label();
             this.faceListTxtBox = new System.Windows.Forms.TextBox();
             this.createFaceListBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.nextFrmBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.logoPicBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // createFaceLstLbl
@@ -64,37 +64,38 @@
             this.createFaceListBtn.UseVisualStyleBackColor = true;
             this.createFaceListBtn.Click += new System.EventHandler(this.createFaceListBtn_Click);
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(12, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 23);
-            this.label1.TabIndex = 8;
-            // 
             // nextFrmBtn
             // 
-            this.nextFrmBtn.Location = new System.Drawing.Point(156, 433);
+            this.nextFrmBtn.Location = new System.Drawing.Point(175, 433);
             this.nextFrmBtn.Name = "nextFrmBtn";
             this.nextFrmBtn.Size = new System.Drawing.Size(104, 23);
             this.nextFrmBtn.TabIndex = 9;
-            this.nextFrmBtn.Text = "button1";
+            this.nextFrmBtn.Text = "Next";
             this.nextFrmBtn.UseVisualStyleBackColor = true;
             this.nextFrmBtn.Click += new System.EventHandler(this.nextFrmBtn_Click);
             // 
-            // pictureBox1
+            // logoPicBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(83, 231);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 50);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.logoPicBox.InitialImage = null;
+            this.logoPicBox.Location = new System.Drawing.Point(95, 150);
+            this.logoPicBox.Name = "logoPicBox";
+            this.logoPicBox.Size = new System.Drawing.Size(265, 195);
+            this.logoPicBox.TabIndex = 10;
+            this.logoPicBox.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(62, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(326, 23);
+            this.label1.TabIndex = 8;
             // 
             // ListCreationFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 468);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.logoPicBox);
             this.Controls.Add(this.nextFrmBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createFaceLstLbl);
@@ -102,7 +103,7 @@
             this.Controls.Add(this.createFaceListBtn);
             this.Name = "ListCreationFrm";
             this.Text = "ListCreationFrm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,9 +113,9 @@
 
         private System.Windows.Forms.Label createFaceLstLbl;
         public System.Windows.Forms.TextBox faceListTxtBox;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button createFaceListBtn;
         private System.Windows.Forms.Button nextFrmBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logoPicBox;
+        private System.Windows.Forms.Label label1;
     }
 }

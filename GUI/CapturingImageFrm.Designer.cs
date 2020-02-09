@@ -48,7 +48,7 @@
             this.CapturingBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CapturingBtn.Size = new System.Drawing.Size(160, 23);
             this.CapturingBtn.TabIndex = 1;
-            this.CapturingBtn.Text = "Capturung Image";
+            this.CapturingBtn.Text = "Capturing Image";
             this.CapturingBtn.UseVisualStyleBackColor = true;
             this.CapturingBtn.Click += new System.EventHandler(this.CapturingBtn_Click);
             // 
