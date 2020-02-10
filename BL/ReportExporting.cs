@@ -41,7 +41,7 @@ namespace BL
             // If the idNumber has typed hasn't found in the system.
             if (idNumber != "" && isCondition == false)
             {
-                remark = "There's no such an IdNumber in the system. | ";
+                resultLbl.Text = "There's no such an IdNumber in the system.";
                 return dataTable;
             }
             if (month.Controls[1].Text != "")
@@ -142,15 +142,17 @@ namespace BL
             if (File.Exists(fullPath))
                 if (ReportExporting.FileInUse(fullPath))
                 {
-                    resultLbl.Text = "Please close the file.";
+                    resultLbl.Text = "The file is open, Please close the file.";
                     return;
                 }
 
-            resultLbl.Text = "true";
+            // resultLbl.Text = "true";
 
             workbook.Save(fullPath);
 
-            resultLbl.Text = remark + "R=" + dataTable.Rows.Count.ToString() + "__C=" + dataTable.Columns.Count.ToString();
+            // resultLbl.Text = remark + "R=" + dataTable.Rows.Count.ToString() + "__C=" + dataTable.Columns.Count.ToString();
+            if (resultLbl.Text == "")
+                resultLbl.Text = "Successfully exported.";
         }
 
         static bool FileInUse(string path)

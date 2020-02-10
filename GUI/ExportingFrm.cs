@@ -44,7 +44,9 @@ namespace GUI
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            this.reportExporting.ExportActivities(idTxtBox.Text.ToString(), monthNumeric, yearNumeric, resultLbl,selectedFolder);
+            resultLbl.Text = "";
+
+            this.reportExporting.ExportActivities(idTxtBox.Text.ToString(), monthNumeric, yearNumeric, resultLbl, selectedFolder);
         }
 
         private void ExportingFrm_FormClosed(object sender, FormClosedEventArgs e)

@@ -120,7 +120,8 @@ namespace BL
                     persistedFaceId = root["persistedFaceId"].GetString();
 
                     // Show in the form the 'persistedFaceId' of the new added face on called 'showResults' label.
-                    showResults.Text = "Successfully uploaded\n persistedFaceId = " + persistedFaceId;
+                    showResults.Text = "Successfully uploaded";
+                    //\n persistedFaceId = " + persistedFaceId;
 
                     // Record the new persisted Id linked to the current employee number.
                     SaveNewPersistedFaceId();
@@ -198,7 +199,7 @@ namespace BL
                 persistedFaceId = responseBodyAsText;
 
                 // Show in the form the 'persistedFaceId' of the new added face on called 'showResults' label
-                l.Text = "Successfully uploaded\n persistedFaceId = " + persistedFaceId;
+                // l.Text = "Successfully uploaded\n persistedFaceId = " + persistedFaceId;
             }
         }
 

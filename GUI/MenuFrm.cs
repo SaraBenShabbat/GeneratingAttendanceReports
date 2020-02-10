@@ -29,7 +29,12 @@ namespace GUI
             logoPicBox.SizeMode = PictureBoxSizeMode.AutoSize;
 
             managePanel.Left = (this.ClientSize.Width - managePanel.Width) / 2;
-            label1.Location = new Point(0, 150);
+
+            label1.Left = (this.ClientSize.Width - label1.Width) / 3 + 42;
+            label1.Top = managePanel.Top + label1.Height - 55;
+            //   label1.AutoSize = true;
+            //label1.BackColor = Color.Blue;
+            // label1.TextAlign = ContentAlignment.MiddleRight;
 
             testingImgTimer.Interval = 30000;
             testingImgTimer.Tick += new EventHandler(EnvokeProcessScheduler);
@@ -101,6 +106,8 @@ namespace GUI
 
         private void TakingPicBtn_Click(object sender, EventArgs e)
         {
+            label1.Text = "";
+
             capturingImagefrm = new CapturingImageFrm(this, true);
             imageTesting = new ImageTesting();
             imageTesting.CaptureImage(capturingImagefrm, capturingImagefrm.pictureBox, this.takingPicBtn, this.label1);
@@ -108,6 +115,8 @@ namespace GUI
 
         private void FileExplorerBtn_Click(object sender, EventArgs e)
         {
+            label1.Text = "";
+
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Title = "Choose the image to test it";
             fileDialog.Filter = "Image Files|*.jpg";

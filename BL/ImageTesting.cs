@@ -136,12 +136,12 @@ namespace BL
                 // Go over all the detected faces: Try to find similar from the company employees & if ther's need, wrtie to DB.
                 foreach (var face in faces)
                     await FindSimilar(face.FaceId.ToString(), results);
-                results.Text += "New group";
+                //  results.Text += "New group";
             }
 
             //}
             else
-                results.Text += "No faces for testing, have been detected\n----------------\n";
+                results.Text += "No faces for testing, have been detected\n";
 
             // Dispose the server client
             faceClient.HttpClient.Dispose();
@@ -198,7 +198,7 @@ namespace BL
 
                 if (response.IsSuccessStatusCode == false)
                 {
-                    res.Text += "An error occured; Please try again.";
+                    res.Text = "Ooops; An error occured, Please try again...";
                     return;
                 }
 
@@ -211,17 +211,17 @@ namespace BL
                     // Format the response & extract the persistedFaceId and the confidence.
                     FormatResponse(responseBodyAsText, out currentPersistedFaceId, out currentConfidence);
 
-                    res.Text += "Highest currentPersistedFaceId = " + currentPersistedFaceId + ";   Highest confidence = " + currentConfidence.ToString();
+                    //  res.Text += "Highest currentPersistedFaceId = " + currentPersistedFaceId + ";   Highest confidence = " + currentConfidence.ToString();
 
                     // If there're likely chances for right identification; write this activity in DB.
                     if (currentConfidence >= 0.56)
                         WriteToDB(currentPersistedFaceId);
                 }
-                else
-                    res.Text += "No faces were found as matched.";
+                // else
+                // res.Text += "No faces were found as matched.";
             }
 
-            res.Text += "\n----------------\n";
+            // res.Text += "\n----------------\n";
 
         }
 
